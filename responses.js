@@ -63,10 +63,12 @@ module.exports = {
         middle: [
             "the {{nth}} time you've mentioned something about an airplane or that private jet you got to play on for a little bit",
             "the {{nth}} time you've mentioned an airplane",
+            "the {{nth}} time you've talked about airplanes",
         ],
         end: [
             ".", "!", "...",
             ", Maybe you should go and fly instead of telling us all about it! _again_",
+            ", do you like airplanes?",
         ]
     },
     [Checker.TAG.STOCKS]: {
