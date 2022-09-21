@@ -11,7 +11,8 @@ class Checker {
         GEOFENCE: 8,
         AGE: 9,
         NOD: 10,
-        AIRSENSE: 11
+        AIRSENSE: 11,
+        BELLLABS: 12
     }
 
 

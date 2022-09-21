@@ -11,6 +11,7 @@ const Checker = require("./checkers/_checker");
 // AGE: 9,
 // NOD: 10,
 // AIRSENSE: 11
+// BELLLABS: 12
 
 module.exports = {
     [Checker.TAG.SWEDEN]: {
@@ -60,7 +61,7 @@ module.exports = {
             "This is ",
         ],
         middle: [
-            "the {{nth}} time you've mentioned something about an airplane or that private jet you to to play on for a little bit",
+            "the {{nth}} time you've mentioned something about an airplane or that private jet you got to play on for a little bit",
             "the {{nth}} time you've mentioned an airplane",
         ],
         end: [
@@ -152,6 +153,17 @@ module.exports = {
             ", You should try turning it on - it might help avoid all the airplanes in your airspace :)",
             ", Did you know that the rest of the world doesn't have this problem?",
             ", You should try moving to Sweden - they don't have this problem"
+        ]
+    },
+    [Checker.TAG.BELLLABS]: {
+        start: [
+            "This is ",
+        ],
+        middle: [
+            "the {{nth}} time you've mentioned Bell Labs",
+        ],
+        end: [
+            ".", "!", "..."
         ]
     },
     [999]: { // Multiple tags
