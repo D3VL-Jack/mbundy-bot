@@ -11,9 +11,10 @@ class Stocks extends Checker {
             body.includes("rcat") ||
             body.includes("low latency") ||
             body.includes("i invented") ||
-            body.includes("stock")
+            body.includes("stock") ||
+            body.includes("wall st")
         ) {
-            this.tags.push(Checker.TAG.SPACEX);
+            this.tags.push(Checker.TAG.STOCKS);
         }
 
         return Promise.resolve(this);

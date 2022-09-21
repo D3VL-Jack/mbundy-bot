@@ -73,7 +73,7 @@ const knownImages = [
             width: 1600,
             height: 1200
         },
-        tags: [Checker.TAG.SPACEX],
+        tags: [Checker.TAG.AIRPLANE],
     }
 ]
 
