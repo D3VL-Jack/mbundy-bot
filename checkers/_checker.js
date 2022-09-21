@@ -1,18 +1,16 @@
 class Checker {
 
     static TAG = {
-        SWEDEN: 1,
-        AIRSPACE: 2,
-        TESLA: 3,
-        AIRPLANE: 4,
-        STOCKS: 5,
-        SPACEX: 6,
-        ATANDT: 7,
-        GEOFENCE: 8,
-        AGE: 9,
-        NOD: 10,
-        AIRSENSE: 11,
-        BELLLABS: 12
+        SWEDEN: 'sweden',
+        AIRSPACE: 'airspace',
+        TESLA: 'tesla',
+        AIRPLANE: 'airplane',
+        STOCKS: 'stocks',
+        SPACEX: 'spacex',
+        AGE: 'age',
+        NOD: 'nod',
+        AIRSENSE: 'airsense',
+        BELLLABS: 'belllabs',
     }
 
 

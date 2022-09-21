@@ -49,7 +49,7 @@ module.exports = {
         ],
         middle: [
             "the {{nth}} time you've mentioned Tesla",
-            "getting silly now, You've mentioned Tesla {{nth}} times",
+            "getting silly now, You've mentioned Tesla {{times}} times",
             "crazy! If i had a penny for every time you've mentioned Tesla, i'd have {{times}} pennies",
         ],
         end: [
@@ -168,7 +168,7 @@ module.exports = {
             ".", "!", "..."
         ]
     },
-    [999]: { // Multiple tags
+    "multiple": { // Multiple tags
         start: [
             "Seriously? This is \n",
             "Steady on! This is \n",
