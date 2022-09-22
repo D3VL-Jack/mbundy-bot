@@ -117,7 +117,7 @@ client.on("messageCreate", async (message) => {
 
     incrementCount('total_messages_sent'); // increment total count
 
-    await message.react('🔎');
+    // await message.react('🔎');
 
     const checker = new CheckersWrapper(message);
     await checker.check();
@@ -128,9 +128,9 @@ client.on("messageCreate", async (message) => {
     console.log("Matched ", checker.getResultNames());
 
     // Sleep so it feels like the bot is thinking, because it is... IT IS!
-    await sleep(1000)
+    // await sleep(1000)
 
-    message.reactions.removeAll();
+    // message.reactions.removeAll();
 
     if (results.length !== 0) {
         if (results.length === 1) {
@@ -166,8 +166,8 @@ client.on("messageCreate", async (message) => {
             }
         }
     } else {
-        await message.react('✅');
-        setTimeout(() => message.reactions.removeAll(), 2000);
+        // await message.react('✅');
+        // setTimeout(() => message.reactions.removeAll(), 2000);
     }
 });
 
