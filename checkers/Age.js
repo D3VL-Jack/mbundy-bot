@@ -6,7 +6,7 @@ class Age extends Checker {
 
         if (
             body.includes("high mileage") ||
-            body.includes("old")
+            body.includes(" old")
         ) {
             this.tags.push(Checker.TAG.AGE);
         }
