@@ -95,7 +95,8 @@ class Images extends Checker {
                     }
                 }
 
-                if (knownImage.weight > 0) {
+                // make the matches have to be exact, otherwise we get false positives on size - oops
+                if (knownImage.weight === Object.keys(knownImage.matchOn).length) {
                     candidates.push(knownImage);
                 }
 
