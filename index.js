@@ -46,6 +46,14 @@ const getCount = (key) => {
     return _store[key] || 0;
 }
 
+const setSetting = async (key, value) => {
+    const data = JSON.parse(fs.readFileSync(store));
+    data[key] = value;
+    fs.writeFileSync(store, JSON.stringify(data));
+    _store = data;
+    return Promise.resolve();
+}
+
 client.on("messageCreate", async (message) => {
     if (message.author.bot) return false;
 
@@ -61,6 +69,8 @@ client.on("messageCreate", async (message) => {
             reply.push(`"/mbundy admin reboot" - to reboot mbundy bot`);
             reply.push(`"/mbundy admin ping" - is it hanging? ping it! get a pong back`);
             reply.push(`"/mbundy admin stats" - to see mbundy's raw stats`);
+            reply.push(`"/mbundy admin disable" - Disable Bundy Bot`);
+            reply.push(`"/mbundy admin enable" - Enable Bundy Bot`);
         }
         return message.reply(reply.join("\n"));
     }
@@ -110,6 +120,16 @@ client.on("messageCreate", async (message) => {
             return message.reply(`\`\`\`json\n${JSON.stringify(_store, 4, 4)}\`\`\``);
         }
 
+        if (command === "disable") {
+            await setSetting("isEnabled", false);
+            return message.reply("Bundy Bot has been disabled.");
+        }
+
+        if (command === "enable") {
+            await setSetting("isEnabled", true);
+            return message.reply("Bundy Bot has been enabled.");
+        }
+
         return message.reply("Invalid command");
     }
 
@@ -144,7 +164,7 @@ client.on("messageCreate", async (message) => {
 
             const response = mustacheReplace(start + middle + end, { nth: nthNumber(count), times: count })
 
-            await message.reply(response);
+            if (getCount("isEnabled")) await message.reply(response);
 
             await incrementCount(results[0]);
 
@@ -159,7 +179,7 @@ client.on("messageCreate", async (message) => {
 
             const response = start + middle + end;
 
-            await message.reply(response);
+            if (getCount("isEnabled")) await message.reply(response);
 
             for (const result of results) {
                 await incrementCount(result);
