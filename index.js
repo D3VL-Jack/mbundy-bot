@@ -122,12 +122,12 @@ client.on("messageCreate", async (message) => {
 
         if (command === "disable") {
             await setSetting("isEnabled", false);
-            return message.reply("Bundy Bot has been disabled.");
+            return message.reply("https://tenor.com/view/you-didnt-see-me-jaget-side-hustle-ninja-sneaky-gif-23021950");
         }
 
         if (command === "enable") {
             await setSetting("isEnabled", true);
-            return message.reply("Bundy Bot has been enabled.");
+            return message.reply("https://tenor.com/view/zombie-hand-grave-rise-raiseyourhand-gif-4519606");
         }
 
         return message.reply("Invalid command");
